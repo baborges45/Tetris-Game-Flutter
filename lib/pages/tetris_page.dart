@@ -21,34 +21,56 @@ class _TetrisState extends State<Tetris> {
       ),
       backgroundColor: Colors.indigo,
       body: SafeArea(
-          child: Column(
-        children: <Widget>[
-          ScoreBar(),
-          Expanded(
-            child: Center(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Flexible(
-                    flex: 3,
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(10.0, 10.0, 5.0, 10.0),
-                      child: Game(),
+        child: Column(
+          children: <Widget>[
+            ScoreBar(),
+            Expanded(
+              child: Center(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Flexible(
+                      flex: 3,
+                      child: Padding(
+                        padding:
+                            const EdgeInsets.fromLTRB(10.0, 10.0, 5.0, 10.0),
+                        child: Game(),
+                      ),
                     ),
-                  ),
-                  Flexible(
-                    flex: 1,
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(5.0, 10.0, 10.0, 10.0),
-                      child: NextBloc(),
+                    Flexible(
+                      flex: 1,
+                      child: Padding(
+                        padding:
+                            const EdgeInsets.fromLTRB(5.0, 10.0, 10.0, 10.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            NextBloc(),
+                            SizedBox(
+                              height: 30,
+                            ),
+                            RaisedButton(
+                              child: Text(
+                                'Start',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.grey[200],
+                                ),
+                              ),
+                              color: Colors.indigo[700],
+                              onPressed: () {},
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
-      )),
+          ],
+        ),
+      ),
     );
   }
 }
